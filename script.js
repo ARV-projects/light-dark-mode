@@ -43,11 +43,11 @@ function switchTheme(event) {
     if (event.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        darkMode();
+        toggleDarkLightMode(true);
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-        lightMode();
+        toggleDarkLightMode(false);
     }
 }
 
@@ -61,6 +61,6 @@ if (currentTheme) {
 
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
-        darkMode();
+        toggleDarkLightMode(true);
     }
 };
